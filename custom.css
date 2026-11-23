@@ -5,3 +5,69 @@ h1 {
     color: rgb(112, 160, 228);
     margin-left: 200px;
 }
+
+/* 顶部快捷栏：蓝紫色方框 */
+.quick-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    padding:14px 10px;
+    background:#efeaff;
+    border-bottom:3px solid #6a4fc7;
+}
+.quick-nav a{
+    display:inline-block;
+    padding:10px 18px;
+    background:linear-gradient(135deg,#4a63d8,#8a4fd1);
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:none;
+    border:2px solid #3a2e8f;
+    border-radius:6px;
+    box-shadow:0 2px 0 #2c2270;
+}
+.quick-nav a:hover{
+    background:linear-gradient(135deg,#5b76ee,#9a5fe4);
+    filter:brightness(1.08);
+}
+
+@media (max-width:600px){
+    .quick-nav a{ padding:8px 12px; font-size:13px; }
+}
+
+/* ---------- 手机端适配 ---------- */
+@media (max-width:600px){
+    /* 页面不出现横向滚动 */
+    body{ margin:0; padding:0; overflow-x:hidden; }
+
+    /* 标题取消 200px 左边距，避免被挤到右边；内联 text-align:center 保留 */
+    h1{ margin-left:0 !important; font-size:24px; }
+
+    /* 所有图片等比缩放，不超出屏幕 */
+    img{ max-width:100% !important; height:auto !important; }
+
+    /* 头像（400×400）居中显示 */
+    img[src="photo00.jpg"]{ display:block; margin-left:auto; margin-right:auto; }
+
+    /* 顶部导航行：允许换行、字号缩小、间距紧凑 */
+    body > p:first-of-type{ margin:8px 10px; line-height:1.9; }
+    body > p:first-of-type a{ font-size:14px; }
+
+    /* 角色九宫格：3 列等宽，图片填满格子，整体不溢出 */
+    table{
+        width:calc(100% - 16px) !important;
+        margin:0 8px;
+        table-layout:fixed;
+        border-collapse:collapse;
+    }
+    table th{ padding:2px; }
+    table img{ width:100% !important; height:auto !important; display:block; }
+
+    /* IG 二维码居中 */
+    img[src="ig.png"]{ display:block; margin-left:auto; margin-right:auto; }
+
+    /* 各栏正文左右留白 */
+    h3, ul, li{ margin-left:10px; margin-right:10px; }
+}
